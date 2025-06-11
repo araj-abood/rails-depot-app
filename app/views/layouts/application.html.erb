@@ -6,9 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= yield :head %>
-
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -17,10 +15,24 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <header class="bg-purple-700 pb-2">
+      <%= image_tag "app-logo", alt: "Aj's online store", width: 150 %>
+      <h1 class="text-white"><%= @page_title %></h1>
+    </header>
+    <section class="flex">
+      <nav class="bg-purple-900 p-6">
+        <p class="text-gray-50 mb-5"><%= Time.now.strftime "%d / %m / %Y" %></p>
+        <ul class="text-gray-300 leading-8 ">
+          <li><%= link_to "Home", store_index_path %></li>
+          <li><%= link_to "Questions", store_index_path %></li>
+          <li><%= link_to "News", store_index_path %></li>
+          <li><%= link_to "Contacts", store_index_path %></li>
+        </ul>
+      </nav>
+      <main class="container mx-auto mt-4 px-5 flex">
+        <%= yield %>
+      </main>
+    </section>
   </body>
 </html>

@@ -3,11 +3,11 @@
 one:
   title: Programming Ruby 1.asd9
   description: MyText
-  image_url: MyString.jpg
+  image_url: asd.png
   price: 9.99
 
 two:
   title: "one"
   description: MyText
-  image_url: MyString.jpg
+  image_url: asd.png
   price: 9.99
